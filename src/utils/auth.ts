@@ -1,0 +1,15 @@
+import bcrypt from "bcrypt";
+
+export const hashPassword = async (password: string) => {
+  console.log(password);
+  /*
+  salt -> random group of strings
+  round -> number of times that hash will be applied
+  */
+  const salt = await bcrypt.genSalt(10);
+  return await bcrypt.hash(password, salt);
+};
+
+export const checkPassword = async (password: string, hashed: string) => {
+  return await bcrypt.compare(password, hashed);
+};
