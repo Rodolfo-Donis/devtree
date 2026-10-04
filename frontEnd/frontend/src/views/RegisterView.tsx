@@ -1,0 +1,3 @@
+export default function RegisterView() {
+  return <div className="text-6xl">Register View</div>;
+}
